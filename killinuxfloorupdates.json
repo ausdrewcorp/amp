@@ -1,13 +1,12 @@
 [
     {
-        "UpdateStageName": "Run killinuxfloor update",
-        "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "Executable",
+        "UpdateStageName":"Run klf update",
+        "UpdateSourcePlatform":"Linux",
+        "UpdateSource":"Executable",
         "UpdateSourceData":"/bin/bash",
-        "UpdateSourceArgs":"./su steam && ./klf update",
-        "UnzipUpdateSource": false,
-        "OverwriteExistingFiles": false,
-        "DeleteAfterExtract": true,
-        "OneShot": false
+        "UpdateSourceArgs":"-c 'sudo su steam && klf update'",
+        "UpdateSourceConditionSetting":"",
+        "UpdateSourceConditionValue":"",
+        "SkipOnFailure":false
     }
 ]
