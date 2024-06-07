@@ -16,7 +16,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData":"/bin/bash",
-        "UpdateSourceArgs":"echo \"$PWD\"",
+        "UpdateSourceArgs":"{{$Workingdir}}/killinuxfloor-master/install.sh",
         "UnzipUpdateSource": false,
         "OverwriteExistingFiles": false,
         "DeleteAfterExtract": true,
