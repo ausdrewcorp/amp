@@ -83,4 +83,4 @@ App.UpdateSources=@IncludeJson[killinuxfloorupdates.json]
 Errors=
 isValid=true
 App.EnvironmentVariables={"LD_LIBRARY_PATH": "{{$FullBaseDir}}linux64:{{$FullRootDir}}linux64:%LD_LIBRARY_PATH%", "WINEPREFIX": "{{$FullRootDir}}.wine", "WINEARCH": "win64", "WINEDEBUG": "-all"}
-GenericModule.Meta.AppConfigId=4d314466-c8b9-4cd1-b864-4dd6d1d7fd75
+Meta.AppConfigId=4d314466-c8b9-4cd1-b864-4dd6d1d7fd75
