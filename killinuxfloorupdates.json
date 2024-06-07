@@ -16,7 +16,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData":"/bin/bash",
-        "UpdateSourceArgs":"{{$Workingdir}}/killinuxfloor-master/install.sh",
+        "UpdateSourceArgs":"./killinuxfloor/serverfiles/killinuxfloor-master/install.sh",
         "UnzipUpdateSource": false,
         "OverwriteExistingFiles": false,
         "DeleteAfterExtract": true,
