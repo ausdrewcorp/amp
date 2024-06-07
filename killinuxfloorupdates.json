@@ -7,7 +7,7 @@
         "UpdateSourceArgs": "",
         "UpdateSourceTarget": "",
         "UnzipUpdateSource": true,
-        "OverwriteExistingFiles": true,
+        "OverwriteExistingFiles": false,
         "DeleteAfterExtract": true,
         "OneShot": true
     },
