@@ -22,7 +22,7 @@ RUN useradd -m amp && echo "amp:amp" | chpasswd && adduser amp sudo
 # Add amp to sudoers
 RUN echo 'amp ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-RUN mkdir /AMP/killinuxfloor && \
+RUN mkdir -p /AMP/killinuxfloor && \
     ln -s /home/amp /AMP/killinuxfloor/KF2
 
 # Change the ownership of the /home/steam directory to amp user
