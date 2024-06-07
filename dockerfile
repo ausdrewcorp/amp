@@ -16,6 +16,9 @@ RUN git clone https://github.com/noobient/killinuxfloor.git && \
     sed -i '15d' ./roles/install/tasks/main.yml && \
     echo y | ./install.sh --extra-vars 'skip_kfgame=true'
 
+# Assuming 'amp' user is already created, if not, create it
+RUN useradd -m amp
+
 RUN mkdir /AMP && \
     ln -s /home/steam /AMP/killinuxfloor
 
