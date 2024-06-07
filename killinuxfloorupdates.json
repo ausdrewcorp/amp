@@ -15,7 +15,7 @@
         "UpdateStageName": "Run killinuxfloor install",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
-        "UpdateSourceData": ".serverfiles/killinuxfloor-master/install.sh",
+        "UpdateSourceData": "./serverfiles/killinuxfloor-master/install.sh",
         "UnzipUpdateSource": false,
         "OverwriteExistingFiles": false,
         "DeleteAfterExtract": true,
