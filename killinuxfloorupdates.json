@@ -4,7 +4,7 @@
         "UpdateSourcePlatform":"Linux",
         "UpdateSource":"Executable",
         "UpdateSourceData":"/bin/bash",
-        "UpdateSourceArgs":"-c 'sudo su steam && klf update'",
+        "UpdateSourceArgs":"-c './killinuxfloor/update.sh'",
         "UpdateSourceConditionSetting":"",
         "UpdateSourceConditionValue":"",
         "SkipOnFailure":false
