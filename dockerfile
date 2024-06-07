@@ -24,7 +24,8 @@ RUN mkdir /AMP && \
 
 # Change the ownership of the /home/steam directory to amp user
 RUN chown -R amp:amp /home/steam && \
-    chown -R amp:amp /AMP
+    chown -R amp:amp /AMP && \
+    chown amp:amp /etc/systemd/system/kf2.service.d/kf2.service.conf
 
 ENTRYPOINT ["/ampstart.sh"]
 CMD []
