@@ -16,8 +16,8 @@ RUN git clone https://github.com/noobient/killinuxfloor.git && \
     sed -i '15d' ./roles/install/tasks/main.yml && \
     echo y | ./install.sh --extra-vars 'skip_kfgame=true'
 
-RUN mkdir /AMP 
-ln -s /home/steam /AMP/killinuxfloor
+RUN mkdir /AMP && \
+    ln -s /home/steam /AMP/killinuxfloor
 
 # Change the ownership of the /home/steam directory to amp user
 RUN chown -R amp:amp /home/steam
