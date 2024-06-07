@@ -9,7 +9,7 @@
         "UnzipUpdateSource": true,
         "OverwriteExistingFiles": true,
         "DeleteAfterExtract": true,
-        "OneShot": false
+        "OneShot": true
     },
     {
         "UpdateStageName": "Run killinuxfloor install",
