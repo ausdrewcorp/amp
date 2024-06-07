@@ -1,0 +1,24 @@
+[
+    {
+        "UpdateStageName": "Downloading killinuxfloor",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://github.com/noobient/killinuxfloor/archive/refs/heads/master.zip",
+        "UpdateSourceArgs": "noobient/killinuxfloor",
+        "UpdateSourceTarget": "./",
+        "UnzipUpdateSource": true,
+        "OverwriteExistingFiles": true,
+        "DeleteAfterExtract": true,
+        "OneShot": false
+    },
+    {
+        "UpdateStageName": "Run killinuxfloor install",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "./killinuxfloor-master/install.sh",
+        "UnzipUpdateSource": false,
+        "OverwriteExistingFiles": false,
+        "DeleteAfterExtract": true,
+        "OneShot": false
+    }
+]
