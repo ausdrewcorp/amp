@@ -20,7 +20,7 @@ RUN mkdir /AMP && \
     ln -s /home/steam /AMP/killinuxfloor
 
 # Change the ownership of the /home/steam directory to amp user
-RUN chown -R amp:amp /home/steam
+RUN chown -R amp:amp /home/steam && \
     chown -R amp:amp /AMP
 
 ENTRYPOINT ["/ampstart.sh"]
