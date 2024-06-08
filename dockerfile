@@ -39,11 +39,12 @@ RUN echo 'amp ALL=NOPASSWD: /bin/systemctl start kf2.service' >> /etc/sudoers &&
     echo 'amp ALL=NOPASSWD: /usr/bin/firewall-cmd --set-log-denied=all' >> /etc/sudoers && \
     echo 'amp ALL=NOPASSWD: /usr/bin/firewall-cmd --set-log-denied=off' >> /etc/sudoers && \
     echo 'amp ALL=NOPASSWD: /usr/local/bin/check-log-throttling' >> /etc/sudoers && \
-    chmod 777 /etc/systemd/system/kf2.service*
+    chmod -r 777 /etc/systemd/system/kf2.service*
 
 # Make the /home/amp directory a symlink to /AMP/killinuxfloor/server
 RUN mkdir -p /AMP/killinuxfloor && \
-    ln -s /AMP/killinuxfloor/server /home/amp
+    ln -s /AMP/killinuxfloor/server /home/amp && \
+    chmod -r 777 /AMP
 
 ENTRYPOINT ["/ampstart.sh"]
 CMD []
