@@ -1,10 +1,10 @@
 {
     "id": "cbf3d7cf-ce19-414f-8b72-32e46371843e",
     "authors": [
-        "ausdrew - Made with AMP Config Generator"
+        "ausdrew"
     ],
-    "origin": "https://github.com/ausdrew - Made with AMP Config Generator/AMPTemplates.git",
-    "url": "https://github.com/ausdrew - Made with AMP Config Generator/AMPTemplates",
+    "origin": "https://github.com/ausdrew/amp",
+    "url": "https://github.com/ausdrew/amp.git",
     "imagefile": "",
-    "prefix": "ausdrew - Made with AMP Config Generator"
+    "prefix": "ausdrew - "
 }

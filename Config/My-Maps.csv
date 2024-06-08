@@ -1,0 +1,23 @@
+# List of maps you want to have installed.
+# Add entries in "id,name" format, one map per line, without quotes.
+#
+# - name = filename of the map without the .kfm extension
+# - id = displayed on the workshop page in the url as ?id=
+#
+# Don't add spaces before or after commas.
+# Lines starting with # will be ignored.
+# Run "killinuxfloor apply" to apply your changes.
+# When new maps finish downloading, the server restarts automatically once more.
+
+838775511,KF-HorzineArenaRMEdition
+1210703659,KF-KillingPool
+643269874,KF-HotelZed
+820046643,KF-Offices
+682290186,KF-KF1_Manor
+803559396,KF-Cell_Alpha
+857015700,KF-MountainPass_zfix
+1498677457,KF-420-GanjaFarm
+#742688453,KF-Centered
+2009462799,KF-HorzineArena-B2
+1262586243,KF-Defence_Thyself_Day_Fin3
+1449325690,KF-Defence_Thyself_Deluxe_Night

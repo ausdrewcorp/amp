@@ -1,0 +1,41 @@
+[
+    {
+        "Protocol": 2,
+        "Port": 7777,
+        "Offset": 0,
+        "Range": 1,
+        "Ref": "ApplicationPort1",
+        "Name": "Application Port 1",
+        "Description": "",
+        "IsDelayedOpen": false,
+        "Hidden": false,
+        "ChildPorts": null,
+        "Required": false
+    },
+    {
+        "Protocol": 2,
+        "Port": 27015,
+        "Offset": 0,
+        "Range": 1,
+        "Ref": "ApplicationPort2",
+        "Name": "Application Port 2",
+        "Description": "",
+        "IsDelayedOpen": false,
+        "Hidden": false,
+        "ChildPorts": null,
+        "Required": false
+    },
+    {
+        "Protocol": 2,
+        "Port": 8766,
+        "Offset": 0,
+        "Range": 1,
+        "Ref": "RemoteAdminPort",
+        "Name": "Application Admin Port",
+        "Description": "",
+        "IsDelayedOpen": false,
+        "Hidden": false,
+        "ChildPorts": null,
+        "Required": false
+    }
+]

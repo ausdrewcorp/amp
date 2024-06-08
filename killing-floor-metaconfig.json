@@ -1,0 +1,23 @@
+[
+    {
+      "ConfigFile": "./KFGame/Config/PCServer-KFGame.ini",
+      "AutoMap": true,
+      "ConfigType": "ini"
+    },
+    {
+      "ConfigFile": "./KFGame/Config/LinuxServer-KFGame.ini",
+      "AutoMap": true,
+      "ConfigType": "ini"
+    },
+    {
+      "ConfigFile": "./KFGame/Config/LinuxServer-KFEngine.ini",
+      "AutoMap": true,
+      "ConfigType": "ini"
+    },
+    {
+      "ConfigFile": "./KFGame/Config/KFWeb.ini",
+      "AutoMap": true,
+      "ConfigType": "ini"
+    }
+  ]
+  

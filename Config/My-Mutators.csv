@@ -1,0 +1,14 @@
+# List of mutators you want to have installed.
+# This won't load the mutators, just installs them.
+# Add entries in "id" format, one mutator per line, without quotes.
+#
+# id = displayed on the workshop page in the url as ?id=
+#
+# Don't add spaces before or after.
+# Lines starting with # will be ignored.
+
+# Display Damage
+2625647922
+
+# UKFP
+2875147606
