@@ -8,15 +8,24 @@ RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && \
     ENV LANG en_US.UTF-8  
     ENV LANGUAGE en_US:en  
     ENV LC_ALL en_US.UTF-8     
-    
+
+COPY docker/systemctl3.py /usr/bin/systemctl
+COPY docker/journalctl3.py /usr/bin/journalctl
+
 RUN git clone https://github.com/noobient/killinuxfloor.git && \
     cd killinuxfloor && \
     sed -i '34d' ./roles/install/tasks/steam.yml && \
     sed -i '15d' ./roles/install/tasks/main.yml && \
     echo y | ./install.sh --extra-vars 'skip_kfgame=true'
 
-# Create 'amp' user and add it to 'sudo' group
-RUN useradd -m amp && adduser amp sudo
+# Rename the 'steam' user to 'amp' and rename the home folder
+RUN usermod -l amp steam && \
+    usermod -d /home/amp -m amp && \
+    adduser amp sudo
+
+# Rename the steam group to amp
+RUN groupmod -n amp steam
+
 
 # Add amp to sudoers for specific commands
 RUN echo 'amp ALL=NOPASSWD: /bin/systemctl start kf2.service' >> /etc/sudoers && \
@@ -30,13 +39,10 @@ RUN echo 'amp ALL=NOPASSWD: /bin/systemctl start kf2.service' >> /etc/sudoers &&
     echo 'amp ALL=NOPASSWD: /usr/bin/firewall-cmd --set-log-denied=off' >> /etc/sudoers && \
     echo 'amp ALL=NOPASSWD: /usr/local/bin/check-log-throttling' >> /etc/sudoers
 
-RUN mkdir -p /AMP/killinuxfloor && \
-    ln -s /home/amp /AMP/killinuxfloor/KF2
-
 # Change the ownership of the /home/steam directory to amp user
-RUN chown -R amp:amp /home/steam && \
-    chown -R amp:amp /AMP && \
-    chown amp:amp /etc/systemd/system/kf2.service.d/kf2.service.conf
+#RUN chown -R amp:amp /home/steam && \
+#    chown -R amp:amp /AMP && \
+#    chown amp:amp /etc/systemd/system/kf2.service.d/kf2.service.conf
 
 ENTRYPOINT ["/ampstart.sh"]
 CMD []
