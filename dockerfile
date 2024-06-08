@@ -26,7 +26,6 @@ RUN usermod -l amp steam && \
 # Rename the steam group to amp
 RUN groupmod -n amp steam
 
-
 # Add amp to sudoers for specific commands
 RUN echo 'amp ALL=NOPASSWD: /bin/systemctl start kf2.service' >> /etc/sudoers && \
     echo 'amp ALL=NOPASSWD: /bin/systemctl stop kf2.service' >> /etc/sudoers && \
@@ -39,10 +38,10 @@ RUN echo 'amp ALL=NOPASSWD: /bin/systemctl start kf2.service' >> /etc/sudoers &&
     echo 'amp ALL=NOPASSWD: /usr/bin/firewall-cmd --set-log-denied=off' >> /etc/sudoers && \
     echo 'amp ALL=NOPASSWD: /usr/local/bin/check-log-throttling' >> /etc/sudoers
 
-# Change the ownership of the /home/steam directory to amp user
-#RUN chown -R amp:amp /home/steam && \
-#    chown -R amp:amp /AMP && \
-#    chown amp:amp /etc/systemd/system/kf2.service.d/kf2.service.conf
+# Change the ownership of the /home/amp directory to amp user
+RUN chown -R amp:amp /home/amp && \
+    chown amp:amp /etc/systemd/system/kf2.service.d/kf2.service.conf
 
+USER amp
 ENTRYPOINT ["/ampstart.sh"]
 CMD []
