@@ -18,10 +18,16 @@ RUN git clone https://github.com/noobient/killinuxfloor.git && \
     sed -i '15d' ./roles/install/tasks/main.yml && \
     echo y | ./install.sh --extra-vars 'skip_kfgame=true'
 
-# removes the steam user and then renames the /home/steam folder to /home/amp - changing permissions so that it's owned by the amp user instead of the steam user
-RUN mv /home/steam /home/amp && \
-    userdel steam 
-    
+# Copy /home/steam to /home/amp while preserving symbolic links
+RUN cp -aP /home/steam /home/amp && \
+    userdel steam && \
+    rm -rf /home/steam
+
+# Update symbolic links to point to /home/amp instead of /home/steam
+RUN cd /home/amp && \
+    find . -type l -exec bash -c 'ln -sfn "/home/amp$(readlink {} | cut -c12-)" {}' \; && \
+    ls -la /home/amp
+
 # Add amp to sudoers for specific commands
 RUN echo 'amp ALL=NOPASSWD: /bin/systemctl start kf2.service' >> /etc/sudoers && \
     echo 'amp ALL=NOPASSWD: /bin/systemctl stop kf2.service' >> /etc/sudoers && \
