@@ -1,5 +1,37 @@
 [
     {
+        "UpdateStageName": "Downloading install.sh",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://raw.githubusercontent.com/ausdrewcorp/amp/main/install.sh",
+        "UpdateSourceTarget": "./",
+        "UnzipUpdateSource": false,
+        "OverwriteExistingFiles": false,
+        "DeleteAfterExtract": false,
+        "OneShot": true
+    },
+    {
+        "UpdateStageName": "Set install.sh as executable",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "SetExecutableFlag",
+        "UpdateSourceArgs": "./install.sh",
+        "UnzipUpdateSource": false,
+        "OverwriteExistingFiles": false,
+        "DeleteAfterExtract": false,
+        "OneShot": true
+    },
+    {
+        "UpdateStageName":"Run install.sh",
+        "UpdateSourcePlatform":"Linux",
+        "UpdateSource":"Executable",
+        "UpdateSourceData":"/bin/bash",
+        "UpdateSourceArgs":"-c './killinuxfloor/install.sh'",
+        "UpdateSourceConditionSetting":"",
+        "UpdateSourceConditionValue":"",
+        "SkipOnFailure":false,
+        "OneShot": true
+    },
+    {
         "UpdateStageName": "Downloading update.sh",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
@@ -18,7 +50,7 @@
         "UnzipUpdateSource": false,
         "OverwriteExistingFiles": false,
         "DeleteAfterExtract": false,
-        "OneShot": false
+        "OneShot": true
     },
     {
         "UpdateStageName":"Run update.sh",
@@ -28,6 +60,7 @@
         "UpdateSourceArgs":"-c './killinuxfloor/update.sh'",
         "UpdateSourceConditionSetting":"",
         "UpdateSourceConditionValue":"",
-        "SkipOnFailure":false
+        "SkipOnFailure":false,
+        "OneShot": true
     }
 ]
