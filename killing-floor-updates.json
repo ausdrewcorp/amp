@@ -25,7 +25,7 @@
         "UpdateSourcePlatform":"Linux",
         "UpdateSource":"Executable",
         "UpdateSourceData":"/bin/bash",
-        "UpdateSourceArgs":"-c 'mkdir -p ./Config'",
+        "UpdateSourceArgs":"-c 'mkdir -p ./killing-floor-2/Config'",
         "UpdateSourceConditionSetting":"",
         "UpdateSourceConditionValue":"",
         "SkipOnFailure":false,
