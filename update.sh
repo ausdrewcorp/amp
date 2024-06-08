@@ -1,3 +1,4 @@
-cd /home/amp
-ls -la
-./bin/killinuxfloor 
+#!/bin/bash
+export TERM=xterm
+
+./bin/killinuxfloor update
