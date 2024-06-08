@@ -4,7 +4,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
         "UpdateSourceData": "https://raw.githubusercontent.com/ausdrewcorp/amp/main/update.sh",
-        "UpdateSourceTarget": "./killinuxfloor",
+        "UpdateSourceTarget": "./killinuxfloor/update.sh",
         "UnzipUpdateSource": false,
         "OverwriteExistingFiles": true,
         "DeleteAfterExtract": false,
