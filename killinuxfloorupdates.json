@@ -14,7 +14,7 @@
         "UpdateStageName": "Set update.sh as executable",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "SetExecutableFlag",
-        "UpdateSourceArgs": "./killinuxfloor/update.sh",
+        "UpdateSourceArgs": "./update.sh",
         "UnzipUpdateSource": false,
         "OverwriteExistingFiles": false,
         "DeleteAfterExtract": true,
