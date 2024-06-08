@@ -4,11 +4,11 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
         "UpdateSourceData": "https://raw.githubusercontent.com/ausdrewcorp/amp/main/update.sh",
-        "UpdateSourceTarget": "./killinuxfloor/update.sh",
+        "UpdateSourceTarget": "./",
         "UnzipUpdateSource": false,
-        "OverwriteExistingFiles": true,
+        "OverwriteExistingFiles": false,
         "DeleteAfterExtract": false,
-        "OneShot": false
+        "OneShot": true
     },
     {
         "UpdateStageName": "Set update.sh as executable",
@@ -17,7 +17,7 @@
         "UpdateSourceArgs": "./update.sh",
         "UnzipUpdateSource": false,
         "OverwriteExistingFiles": false,
-        "DeleteAfterExtract": true,
+        "DeleteAfterExtract": false,
         "OneShot": false
     },
     {
