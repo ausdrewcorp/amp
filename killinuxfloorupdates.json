@@ -60,7 +60,6 @@
         "UpdateSourceArgs":"-c './killinuxfloor/update.sh'",
         "UpdateSourceConditionSetting":"",
         "UpdateSourceConditionValue":"",
-        "SkipOnFailure":false,
-        "OneShot": false
+        "SkipOnFailure":false
     }
 ]
