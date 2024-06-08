@@ -44,7 +44,7 @@ RUN echo 'amp ALL=NOPASSWD: /bin/systemctl start kf2.service' >> /etc/sudoers &&
 # Make the /home/amp directory a symlink to /AMP/killinuxfloor/server
 RUN mkdir -p /AMP/killinuxfloor && \
     ln -s /AMP/killinuxfloor/server /home/amp && \
-    chmod -r 777 /AMP
+    chmod 777 -R /AMP
 
 ENTRYPOINT ["/ampstart.sh"]
 CMD []
