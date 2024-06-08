@@ -6,6 +6,7 @@ if [ ! -L "/AMP/killinuxfloor/server" ]; then
 fi
 
 cp -aP /home/steam /home/amp
+chown -R amp:amp /home/amp 
 
 cd /home/amp && \
 find . -type l -exec bash -c 'ln -sfn "/home/amp$(readlink {} | cut -c12-)" {}' \; && \
