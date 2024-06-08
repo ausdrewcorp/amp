@@ -5,7 +5,7 @@ if [ ! -L "/AMP/killinuxfloor/server" ]; then
     ln -s /home/amp /AMP/killinuxfloor/server
 fi
 
-cp -aP /home/steam /home/amp
+cp -aP /home/steam/* /home/amp
 chown -R amp:amp /home/amp 
 
 cd /home/amp && \
