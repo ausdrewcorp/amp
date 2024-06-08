@@ -10,4 +10,5 @@ chown -R amp:amp /home/amp
 
 cd /home/amp && \
 find . -type l -exec bash -c 'ln -sfn "/home/amp$(readlink {} | cut -c12-)" {}' \; && \
+chown -R amp:amp /home/amp 
 ls -la /home/amp
