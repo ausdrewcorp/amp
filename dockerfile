@@ -38,7 +38,8 @@ RUN echo 'amp ALL=NOPASSWD: /bin/systemctl start kf2.service' >> /etc/sudoers &&
     echo 'amp ALL=NOPASSWD: /usr/bin/firewall-cmd --get-log-denied' >> /etc/sudoers && \
     echo 'amp ALL=NOPASSWD: /usr/bin/firewall-cmd --set-log-denied=all' >> /etc/sudoers && \
     echo 'amp ALL=NOPASSWD: /usr/bin/firewall-cmd --set-log-denied=off' >> /etc/sudoers && \
-    echo 'amp ALL=NOPASSWD: /usr/local/bin/check-log-throttling' >> /etc/sudoers
+    echo 'amp ALL=NOPASSWD: /usr/local/bin/check-log-throttling' >> /etc/sudoers && \
+    chmod 777 /etc/systemd/system/kf2.service*
 
 ENTRYPOINT ["/ampstart.sh"]
 CMD []
