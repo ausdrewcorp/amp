@@ -70,6 +70,23 @@
         }
     },
     {
+        "DisplayName": "Game Length",
+        "Category": "Server Config",
+        "Description": "Set the server's game length.",
+        "Keywords": "Game,length",
+        "FieldName": "Length",
+        "InputType": "enum",
+        "IsFlagArgument": false,
+        "ParamFieldName": "KFGame.KFGameInfo.GameLength",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "2",
+        "EnumValues": {
+            "0": "Short, 4 waves",
+            "1": "Medium, 7 waves",
+            "2": "Long, 10 waves"
+        }
+    },
+    {
         "DisplayName": "Enable Web Admin",
         "Category": "Server Config",
         "Description": "Allows managing the server in a browser using the IP:RemoteAdminPort (from ADS Edit Ports menu).",
