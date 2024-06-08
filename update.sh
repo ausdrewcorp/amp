@@ -5,4 +5,8 @@ if [ ! -L "/AMP/killinuxfloor/server" ]; then
     ln -s /home/amp /AMP/killinuxfloor/server
 fi
 
+cp -aP /home/steam /home/amp
 
+cd /home/amp && \
+find . -type l -exec bash -c 'ln -sfn "/home/amp$(readlink {} | cut -c12-)" {}' \; && \
+ls -la /home/amp
