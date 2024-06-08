@@ -40,6 +40,8 @@ RUN echo 'amp ALL=NOPASSWD: /bin/systemctl start kf2.service' >> /etc/sudoers &&
 
 # Change the ownership of the /home/amp directory to amp user
 RUN chown -R amp:amp /home/amp && \
+    mkdir /AMP && \
+    chown -R amp:amp /AMP && \
     chown amp:amp /etc/systemd/system/kf2.service.d/kf2.service.conf
 
 USER amp
