@@ -14,9 +14,17 @@ COPY docker/journalctl3.py /usr/bin/journalctl
 
 RUN git clone https://github.com/noobient/killinuxfloor.git && \
     cd killinuxfloor && \
+    sed -i 's/name: steam/name: amp/g' ./roles/install/tasks/user.yml && \
+    find . -type f -exec sed -i 's/User=steam/User=amp/g' {} \; && \
+    find . -type f -exec sed -i 's/Group=steam/Group=amp/g' {} \; && \
+    find . -type f -exec sed -i 's/owner: steam/owner: amp/g' {} \; && \
+    find . -type f -exec sed -i 's/group: steam/group: amp/g' {} \; && \
+    find . -type f -exec sed -i 's|/home/steam|/home/amp|g' {} \; && \
+    find . -type f -exec sed -i 's/become_user: steam/become_user: amp/g' {} \; && \
     sed -i '34d' ./roles/install/tasks/steam.yml && \
     sed -i '15d' ./roles/install/tasks/main.yml && \
-    echo y | ./install.sh --extra-vars 'skip_kfgame=true'
+    echo y | ./install.sh --extra-vars 'skip_kfgame=true steam_home=/home/amp'
+
 
 # Copy /home/steam to /home/amp while preserving symbolic links
 #RUN cp -aP /home/steam /home/amp && \
@@ -28,18 +36,6 @@ RUN git clone https://github.com/noobient/killinuxfloor.git && \
 #    find . -type l -exec bash -c 'ln -sfn "/home/amp$(readlink {} | cut -c12-)" {}' \; && \
 #    ls -la /home/amp
 
-# Add amp to sudoers for specific commands
-RUN echo 'amp ALL=NOPASSWD: /bin/systemctl start kf2.service' >> /etc/sudoers && \
-    echo 'amp ALL=NOPASSWD: /bin/systemctl stop kf2.service' >> /etc/sudoers && \
-    echo 'amp ALL=NOPASSWD: /bin/systemctl restart kf2.service' >> /etc/sudoers && \
-    echo 'amp ALL=NOPASSWD: /bin/systemctl status kf2.service' >> /etc/sudoers && \
-    echo 'amp ALL=NOPASSWD: /bin/journalctl --system --unit=kf2.service --follow' >> /etc/sudoers && \
-    echo 'amp ALL=NOPASSWD: /bin/systemctl daemon-reload' >> /etc/sudoers && \
-    echo 'amp ALL=NOPASSWD: /usr/bin/firewall-cmd --get-log-denied' >> /etc/sudoers && \
-    echo 'amp ALL=NOPASSWD: /usr/bin/firewall-cmd --set-log-denied=all' >> /etc/sudoers && \
-    echo 'amp ALL=NOPASSWD: /usr/bin/firewall-cmd --set-log-denied=off' >> /etc/sudoers && \
-    echo 'amp ALL=NOPASSWD: /usr/local/bin/check-log-throttling' >> /etc/sudoers && \
-    chmod 777 /etc/systemd/system/kf2.service*
 
 ENTRYPOINT ["/ampstart.sh"]
 CMD []
