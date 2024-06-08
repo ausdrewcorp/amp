@@ -21,6 +21,17 @@
         "OneShot": false
     },
     {
+        "UpdateStageName":"Make directory",
+        "UpdateSourcePlatform":"Linux",
+        "UpdateSource":"Executable",
+        "UpdateSourceData":"/bin/bash",
+        "UpdateSourceArgs":"-c 'mkdir -p ./Config'",
+        "UpdateSourceConditionSetting":"",
+        "UpdateSourceConditionValue":"",
+        "SkipOnFailure":false,
+        "OneShot": true
+    },
+    {
         "UpdateStageName": "File 1",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
