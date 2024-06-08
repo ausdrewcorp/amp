@@ -36,6 +36,7 @@ RUN git clone https://github.com/noobient/killinuxfloor.git && \
 #    find . -type l -exec bash -c 'ln -sfn "/home/amp$(readlink {} | cut -c12-)" {}' \; && \
 #    ls -la /home/amp
 
+RUN deluser amp
 
 ENTRYPOINT ["/ampstart.sh"]
 CMD []
