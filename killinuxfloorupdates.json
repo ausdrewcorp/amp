@@ -61,6 +61,6 @@
         "UpdateSourceConditionSetting":"",
         "UpdateSourceConditionValue":"",
         "SkipOnFailure":false,
-        "OneShot": true
+        "OneShot": false
     }
 ]

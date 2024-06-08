@@ -1,4 +1,4 @@
 #!/bin/bash
 export TERM=xterm
 
-./bin/killinuxfloor update
+./home/amp/bin/killinuxfloor update
