@@ -18,13 +18,10 @@ RUN git clone https://github.com/noobient/killinuxfloor.git && \
     sed -i '15d' ./roles/install/tasks/main.yml && \
     echo y | ./install.sh --extra-vars 'skip_kfgame=true'
 
-# Rename the 'steam' user to 'amp' and rename the home folder
-RUN usermod -l amp steam && \
-    usermod -d /home/amp -m amp && \
-    adduser amp sudo
-
-# Rename the steam group to amp
-RUN groupmod -n amp steam
+# removes the steam user and then renames the /home/steam folder to /home/amp - changing permissions so that it's owned by the amp user instead of the steam user
+RUN userdel steam && \
+    mv /home/steam /home/amp && \
+    chmod -R a+rwx /home/amp
 
 # Add amp to sudoers for specific commands
 RUN echo 'amp ALL=NOPASSWD: /bin/systemctl start kf2.service' >> /etc/sudoers && \
@@ -37,12 +34,6 @@ RUN echo 'amp ALL=NOPASSWD: /bin/systemctl start kf2.service' >> /etc/sudoers &&
     echo 'amp ALL=NOPASSWD: /usr/bin/firewall-cmd --set-log-denied=all' >> /etc/sudoers && \
     echo 'amp ALL=NOPASSWD: /usr/bin/firewall-cmd --set-log-denied=off' >> /etc/sudoers && \
     echo 'amp ALL=NOPASSWD: /usr/local/bin/check-log-throttling' >> /etc/sudoers
-
-# Change the ownership of the /home/amp directory to amp user
-RUN chown -R amp:amp /home/amp && \
-    mkdir /AMP && \
-    chown -R amp:amp /AMP && \
-    chown amp:amp /etc/systemd/system/kf2.service.d/kf2.service.conf
 
 USER amp
 ENTRYPOINT ["/ampstart.sh"]
